@@ -37,8 +37,10 @@ const emit = defineEmits(['update:selected', 'close'])
 
         <!-- Список посилань -->
         <nav class="flex-1 overflow-y-auto py-4 px-4 space-y-1">
-            <FilterButton href="/" variant="modal" @click="emit('update:selected', 'world')">Головна</FilterButton>
-            <FilterButton variant="modal" @click="emit('update:selected', 'world')"> Всі новини </FilterButton>
+            <FilterButton href="/" variant="modal" @click="emit('update:selected', 'world'); emit('close')">
+                Головна</FilterButton>
+            <FilterButton variant="modal" @click="emit('update:selected', 'world'); emit('close')"> Всі новини
+            </FilterButton>
 
             <div class="pt-4 pb-2">
                 <p class="px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">

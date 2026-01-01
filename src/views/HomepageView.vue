@@ -29,7 +29,7 @@ watch(selected, (value) => {
 <template>
   <AddHeader :selected="selected" @update:selected="selected = $event" @click="openModal" />
 
-  <BurgerMenu :is-open="isOpen" @close="isOpen = false" />
+  <BurgerMenu :is-open="isOpen" @close="isOpen = false" @update:selected="selected = $event" />
 
   <main class="flex h-screen">
     <StartPageHeroSection :selected="selected" @update:selected="selected = $event" variant="start" height="70vh"
