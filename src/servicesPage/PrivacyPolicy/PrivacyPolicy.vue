@@ -1,6 +1,6 @@
 <script setup>
 
-const year = new Date().getFullYear()
+
 const email = 'your-email@example.com'
 
 </script>
@@ -12,7 +12,7 @@ const email = 'your-email@example.com'
         Політика конфіденційності
       </h1>
       <p class="text-xs text-muted-foreground">
-        Останнє оновлення: {{ year }}
+        Останнє оновлення: {{ new Date().getFullYear() }}
       </p>
     </section>
 
@@ -56,10 +56,7 @@ const email = 'your-email@example.com'
         <h2 class="text-base font-semibold">5. Як зв’язатися з нами</h2>
         <p>
           Якщо у вас є питання щодо конфіденційності, напишіть нам:
-          <a
-            :href="`mailto:${email}`"
-            class="text-primary hover:underline"
-          >
+          <a :href="`mailto:${email}`" class="text-primary hover:underline">
             {{ email }}
           </a>
         </p>
@@ -83,4 +80,3 @@ const email = 'your-email@example.com'
     </section>
   </main>
 </template>
-

@@ -2,13 +2,6 @@
 import SupportButton from '../SupportButton/SupportButton.vue';
 import FilterButton from '../FiltrButton/FiltrButton.vue';
 
-const props = defineProps({
-    isOpen: {
-        type: Boolean,
-        default: false
-    }
-})
-
 const emit = defineEmits(['update:selected', 'close'])
 </script>
 
@@ -23,7 +16,7 @@ const emit = defineEmits(['update:selected', 'close'])
         'fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-card border-l border-border shadow-2xl transition-transform duration-300 ease-in-out flex flex-col',
         isOpen ? 'translate-x-0' : 'translate-x-full'
     ]">
-        <!-- Заголовок модалки -->
+
         <div class="p-4 border-b border-border flex items-center justify-between bg-muted/30">
             <span class="font-serif font-bold text-lg">Меню</span>
             <button id="close-menu-btn"
@@ -35,7 +28,7 @@ const emit = defineEmits(['update:selected', 'close'])
             </button>
         </div>
 
-        <!-- Список посилань -->
+
         <nav class="flex-1 overflow-y-auto py-4 px-4 space-y-1">
             <FilterButton href="/" variant="modal" @click="emit('update:selected', 'world'); emit('close')">
                 Головна</FilterButton>
@@ -58,7 +51,7 @@ const emit = defineEmits(['update:selected', 'close'])
             </SupportButton>
         </nav>
 
-        <!-- Футер модалки -->
+
         <div class="p-4 border-t border-border bg-muted/20">
             <p class="text-xs text-center text-muted-foreground">
                 © 2023 NewsHub. Всі права захищено.

@@ -86,7 +86,6 @@ const emit = defineEmits(['update:selected'])
           </ul>
         </div>
 
-        <!-- Підтримка -->
         <div class=" 
     bg-accent/50 rounded-lg p-4 border border-accent/50 flex flex-col gap-0.5 mx-auto
     w-full 
@@ -109,7 +108,7 @@ const emit = defineEmits(['update:selected'])
 
       </div>
 
-      <!-- Нижня частина -->
+
       <div
         class="border-t border-border pt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
         <p>&copy; {{ new Date().getFullYear() }} ВуйкоHub. Всі права захищено.</p>
