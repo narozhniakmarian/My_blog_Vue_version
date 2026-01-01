@@ -5,7 +5,7 @@ const props = defineProps({
   href: String,
   variant: {
     type: String,
-    default: 'header' 
+    default: 'header'
   }
 
 })
@@ -21,7 +21,7 @@ const variants = {
     'rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground shadow border border-input hover:bg-muted hover:text-accent-foreground',
 
   modal:
-    'block w-full px-4 py-3 rounded-lg flex items-center gap-3 hover:bg-accent hover:text-accent-foreground transition-colors'
+    'block w-full px-4 py-3 rounded-lg flex justify-start gap-3 hover:bg-primary/10 hover:text-primary '
 }
 
 
@@ -39,11 +39,7 @@ const componentName = computed(() => {
 </script>
 
 <template>
-  <component
-    :is="componentName"
-    :href="href"
-    :class="classes"
-  >
+  <component :is="componentName" :href="href" :class="classes">
     <slot />
   </component>
 </template>

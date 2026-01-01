@@ -27,7 +27,9 @@ const variants = {
     'text-muted-foreground hover:text-primary transition-colors',
 
   headerActive:
-    'text-primary font-medium'
+    'text-primary font-medium',
+  modal:
+    ' block w-full text-start px-4 py-3 rounded-lg hover:bg-accent hover:text-accent-foreground font-medium'
 }
 
 const classes = computed(() => {

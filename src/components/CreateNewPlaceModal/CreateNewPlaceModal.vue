@@ -8,12 +8,12 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['close' ])
+const emit = defineEmits(['update:selected', 'close'])
 
 </script>
 
 <template>
   <IModal v-if="props.isOpen" @close="emit('close')">
-    
+
   </IModal>
 </template>
