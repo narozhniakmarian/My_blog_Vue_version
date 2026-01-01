@@ -13,6 +13,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AddFooter: typeof import('./components/Footer/AddFooter.vue')['default']
     AddHeader: typeof import('./components/Header/AddHeader.vue')['default']
+    ArticleCard: typeof import('./components/ArticleCard/ArticleCard.vue')['default']
     ArticlePageHeroSection: typeof import('./components/HeroSection/ArticlePageHeroSection.vue')['default']
     BurgerMenu: typeof import('./components/BurgerMenu/BurgerMenu.vue')['default']
     CreateNewPlaceModal: typeof import('./components/CreateNewPlaceModal/CreateNewPlaceModal.vue')['default']
