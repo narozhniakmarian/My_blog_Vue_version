@@ -18,14 +18,14 @@ defineOptions({
 const emit = defineEmits(['update:modelValue'])
 const baseStyles =
   'w-full text-sm rounded-[4px] border-[#eaeaea] border-[1px] py-2 px-3 focus:outline-primary'
-const isTextarea = computed(() => {
-  return props.type === 'textarea'
+const isText = computed(() => {
+  return props.type === 'text'
 })
 const inputStyles = computed(() => {
-  return isTextarea.value ? baseStyles + ' resize-none' : baseStyles
+  return isText.value ? baseStyles + ' h-10' : baseStyles + ' resize-none'
 })
 const componentName = computed(() => {
-  return isTextarea.value ? 'textarea' : 'input'
+  return isText.value  ? 'input' : 'text'
 })
 </script>
 

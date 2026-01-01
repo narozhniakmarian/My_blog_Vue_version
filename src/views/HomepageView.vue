@@ -1,22 +1,34 @@
 <script setup>
-import IButton from '../components/IButton/IButton.vue'
+import { onMounted, ref, watch } from 'vue'
+
+import AddFooter from '../components/Footer/AddFooter.vue'
+import AddHeader from '../components/Header/AddHeader.vue'
+import StartPageHeroSection from '../components/HeroSection/StartPageHeroSection.vue'
+
+const selected = ref('world')
+
+onMounted(() => {
+  const saved = localStorage.getItem('selectedCountry')
+  if (saved) {
+    selected.value = saved
+  }
+})
+
+watch(selected, (value) => {
+  localStorage.setItem('selectedCountry', value)
+})
+
 </script>
 
 <template>
+  <AddHeader :selected="selected" @update:selected="selected = $event" @click="openModal" />
+
   <main class="flex h-screen">
-    <section class="flex-1 flex justify-center items-center px-5 bg-primary">
-      <div class="text-white text-center">
-        <img class="inline mb-6" src="../assets/img/map-pin.svg" alt="" />
-        <h1 class="font-bold text-4xl mb-7">IT traveler</h1>
-        <p class="leading-6 mb-11">
-          Простий і зручний веб додаток, який дозволить тобі відмічати твої улюблені місця, а також
-          ті, в яких би ти дуже хотів побувати. Тож не зволікай і спробуй сам.
-        </p>
-        <IButton>Почати роботу</IButton>
-      </div>
-    </section>
-    <section class="flex-1">
-      <img class="h-full w-full object-cover" src="../assets/img/static-map.png" alt="" />
-    </section>
+    <StartPageHeroSection :selected="selected" @update:selected="selected = $event" variant="start" height="70vh"
+      :hideTitle="false" bgSm="https://res.cloudinary.com/dyeijtfe2/image/upload/v1767253041/hero_sm_opt_yvsab5.webp"
+      bgMd="https://res.cloudinary.com/dyeijtfe2/image/upload/v1767253040/hero_md_opt_njwnqz.webp"
+      bgLg="https://res.cloudinary.com/dyeijtfe2/image/upload/v1767251991/hero_lg_opt_mgrggt.webp" />
   </main>
+
+  <AddFooter :selected="selected" @update:selected="selected = $event" />
 </template>
